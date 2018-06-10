@@ -1,0 +1,45 @@
+.quotes {
+  	display: none;
+}
+
+#hours, #home, #prices {
+  	display: none;
+}
+
+ a .socialmedia {
+    margin: 0px 20px;
+}
+
+#googleMap {
+     width:100%;
+     height:400px;
+}
+  
+#kelley {
+    width:97%;
+}
+.alert {
+    position:fixed; 
+    top: 10%; 
+    left: 55%; 
+    width: 43%;
+    z-index:9999; 
+    border-radius:0px;
+    display: none;
+}
+.jumbotron {
+  background-color: #ff5852;
+}
+.razor {
+  width:130px;
+  height:130px;
+}
+#icon {
+  width:40px;
+}
+.container{
+  margin-top:30px;
+}
+#scissor{
+  width: 30px !important;
+}
