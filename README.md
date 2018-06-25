@@ -9,7 +9,8 @@ An interactive dynamic web page for a small barbershop located in NY. The barber
   Fixed header and footer
   + Quote carousel that fades out and fades in
   + Footer contains basic copyright and creator (me) info and report bugs button
-  - report bugs button functionality
+  + report bugs opens modal form
+  - actual bug information being sent to email
   - vary basic header text and images, planning on getting a buddy to create a logo
     
   Static navbar that hugs top of the page
@@ -38,7 +39,3 @@ An interactive dynamic web page for a small barbershop located in NY. The barber
   
   Hours Content
   +Table consisting of week days and their corresponding shop hours along accepting walk-ins/appointments info
-  
-  Report bug Content
-  + opens modular form
-  - Actual bug information being sent to email
