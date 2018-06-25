@@ -25,28 +25,53 @@ $(function(){
 
     $("#appointmentForm").submit(function(event){
     	if (checkIfValid()) {
-   			$("#success").show();
+   			$("#successAppointment").show();
          	$('#bookModel').modal('toggle');
          	clearBookModel();
          	event.preventDefault();
          	setTimeout(function () {
-         		$("#success").alert('close');
+         		$("#successAppointment").alert('close');
    			}, 2500);
         }
         else
         	event.preventDefault();
 	});
 
+	 $("#bugForm").submit(function(event){
+    	if ($('#desc-input').val().length > 50) {
+   			$("#successBug").show();
+         	$('#bugModel').modal('toggle');
+         	clearBugModel();
+         	event.preventDefault();
+         	setTimeout(function () {
+         		$("#successBug").alert('close');
+   			}, 2500);
+        }
+        else{
+        	$("#descInvalid").show();
+        	$('#desc-input').css("border-color", "#dc3545");
+        	event.preventDefault();
+        }
+	});
+
 	$("#appointmentCancel").click(function(event) {
 		clearBookModel();
 	});
 
-	$(".close").click(function(event){
+	$("#appointmentClose").click(function(event){
 		clearBookModel();
-	})
+	});
+
+	$("#bugCancel").click(function(event) {
+		clearBugModel();
+	});
+
+	$("#bugClose").click(function(event){
+		clearBugModel();
+	});
 
     function showNextQuote() {
-        ++quoteIndex;
+        quoteIndex++;
         quotes.eq(quoteIndex % quotes.length)
             .fadeIn(2000)
             .delay(1000)
@@ -75,7 +100,7 @@ $(function(){
    			$(".navbar-nav li a").removeClass("active");
 	        $(displayId+"btn").addClass("active");
 	        $('.container').html($(displayId).html()).fadeIn(1000); 
-	        if(displayId == "#home")
+	        if(displayId === "#home")
 	        	myMap();
    		}, 1000);
 	}
@@ -107,7 +132,7 @@ $(function(){
 			$('#emailInvalid').hide();
 
 		}
-		if($('#tel-input').val().replace(/\D/g,'').length != phoneNumLength){
+		if($('#tel-input').val().replace(/\D/g,'').length !== phoneNumLength){
 			$('#tel-input').css("border-color", "#dc3545");
 			$('#telInvalid').show();
 			$('#telValid').hide();
@@ -118,7 +143,7 @@ $(function(){
 			$('#telValid').show();
 			$('#telInvalid').hide();
 		}
-		if($('#date-input').val() == ""){
+		if($('#date-input').val() === ""){
 			$('#date-input').css("border-color", "#dc3545");
 			$('#dateInvalid').show();
 			$('#dateValid').hide();
@@ -129,7 +154,7 @@ $(function(){
 			$('#dateValid').show();
 			$('#dateInvalid').hide();
 		}
-		if($('#time-input').val() == ""){
+		if($('#time-input').val() === ""){
 			$('#time-input').css("border-color", "#dc3545");
 			$('#timeInvalid').show();
 			$('#timeValid').hide();
@@ -148,5 +173,11 @@ $(function(){
 		$(".invalid-feedback").hide();
 		$("#appointmentForm .form-control").css("border-color", "");
 		$("#appointmentForm .form-control").val("");
+	}
+
+	function clearBugModel(){
+		$(".invalid-feedback").hide();
+		$("#bugForm .form-control").css("border-color", "");
+		$("#bugForm .form-control").val("");
 	}
 });
