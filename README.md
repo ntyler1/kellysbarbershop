@@ -38,4 +38,7 @@ An interactive dynamic web page for a small barbershop located in NY. The barber
   
   Hours Content
   +Table consisting of week days and their corresponding shop hours along accepting walk-ins/appointments info
-  '''
+  
+  Report bug Content
+  + opens modular form
+  - Actual bug information being sent to email
